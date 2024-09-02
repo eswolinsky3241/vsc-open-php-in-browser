@@ -5,7 +5,7 @@
   "displayName": "Open PHP in Browser",
   "description": "Open PHP scripts in your browser.",
   "license": "MIT",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.92.0"
   },
