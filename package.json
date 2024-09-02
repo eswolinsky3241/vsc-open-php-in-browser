@@ -1,6 +1,6 @@
 {
   "name": "open-php-in-browser",
-  "publisher": "eswolinsky",
+  "publisher": "vscode-buddy",
   "repository": "https://github.com/eswolinsky3241/vsc-open-php-in-browser",
   "displayName": "Open PHP in Browser",
   "description": "Open PHP scripts in your browser.",
@@ -16,6 +16,7 @@
     "onLanguage:php"
   ],
   "main": "./out/extension.js",
+  "icon": "icon.png",
   "contributes": {
     "commands": [
       {
