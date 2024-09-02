@@ -1,0 +1,87 @@
+{
+  "name": "open-php-in-browser",
+  "publisher": "eswolinsky",
+  "repository": "https://github.com/eswolinsky3241/vsc-open-php-in-browser",
+  "displayName": "Open PHP in Browser",
+  "description": "Open PHP scripts in your browser.",
+  "license": "MIT",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.92.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:php"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.openInBrowser",
+        "title": "Open PHP in Browser",
+        "icon": "$(globe)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "extension.openInBrowser",
+          "when": "resourceLangId == php",
+          "group": "navigation",
+          "icon": "globe"
+        }
+      ]
+    },
+    "configuration": {
+      "type": "object",
+      "title": "Open PHP in Browser",
+      "properties": {
+        "phpServer.hostname": {
+          "type": "string",
+          "default": "localhost",
+          "description": "The hostname of the PHP server. Use ${KEY} to reference environment variables."
+        },
+        "phpServer.port": {
+          "type": "string",
+          "default": "80",
+          "description": "The port of the PHP server."
+        },
+        "phpServer.protocol": {
+          "type": "string",
+          "enum": [
+            "http",
+            "https"
+          ],
+          "default": "http",
+          "description": "The protocol of the PHP server."
+        },
+        "phpServer.documentRoot": {
+          "type": "string",
+          "default": null,
+          "description": "The web server document root. Defaults to workspace directory."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.92.0",
+    "@types/mocha": "^10.0.7",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^7.14.1",
+    "@typescript-eslint/parser": "^7.11.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.4.0"
+  }
+}
