@@ -12,3 +12,4 @@ The `hostname` setting may reference environment variables for dynamic server na
 
 ```
 ${MY_SUBDOMAIN}.${MY_DOMAIN}.com
+```
